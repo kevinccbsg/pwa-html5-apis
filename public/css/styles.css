@@ -1,0 +1,47 @@
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #FDFDFD;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container .screenshot-detection,
+.main-container .video-detection {
+  display: none;
+}
+
+.main-container.screenshot .screenshot-detection {
+  display: block;
+}
+
+.main-container.screenshot .video-detection {
+  display: none;
+}
+
+.main-container.video .video-detection {
+  display: block;
+}
+
+.main-container.video .screenshot-detection {
+  display: none;
+}
+
+.video-container {
+  position: relative;
+}
+
+.video-container .face-container {
+  position: absolute;
+  visibility: hidden;
+  border: 1px solid blue;
+  background-image: url(/images/glasses.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}

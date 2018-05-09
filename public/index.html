@@ -5,56 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>HTML APIS</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/vendor/tracking.min.js"></script>
+  <script src="/js/vendor/face.js"></script>
+  <script src="/js/vendor/eye.js"></script>
+  <script src="/js/vendor/mouth.js"></script>
 </head>
 <body>
   <header>
     <h1>HTML APIS Testing</h1>
   </header>
-  <video id="stream-video"></video>
-  <form id="imageForm">
-    <button type="submit" id="my-button">Capture</button>
-    <input id="inp_img" name="photo" type="hidden" value="">
-  </form>
-  <canvas></canvas>
-  <script>
-    const constraint = { audio: false, video: { width: 720, height: 720 } };
-    navigator.mediaDevices.getUserMedia(constraint)
-    .then(function(mediaStream) {
-      var video = document.querySelector('#stream-video');
-      video.srcObject = mediaStream;
-      video.onloadedmetadata = function(e) {
-        video.play();
-      };
-    })
-    .catch(function(err) { console.log(err.name + ": " + err.message); });
-
-
-    const video = document.querySelector('video');
-    const canvas = window.canvas = document.querySelector('canvas');
-
-    canvas.width = 480;
-    canvas.height = 360;    
-
-    const form = document.getElementById('imageForm');
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
-      canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-      document.getElementById('inp_img').value = canvas.toDataURL();
-      const data = new FormData(e.target);
-      try {
-        fetch('/api', {
-          method: 'POST',
-          body: data,
-        });
-      } catch (err) {
-        console.log(err);
-      }
-
-    });
-
-  </script>
+  <nav>
+    <button id="videoButton">Video Detection</button>
+    <button id="screenShootButton">Screenshot Detection</button>
+  </nav>
+  <main class="main-container">
+    <div class="video-container">
+      <video id="stream-video"></video>
+      <div id="videoFaceSquare" class="video-detection face-container"></div>
+    </div>
+    <div class="screenshot-detection">
+      <button id="my-button">Capture</button>
+      <div class="video-container">
+        <canvas id="screenshot-canvas"></canvas>
+        <div id="faceSquare" class="face-container"></div>
+      </div>
+    </div>
+  </main>
+  <script src="/js/app.js"></script>
 </body>
 </html>
