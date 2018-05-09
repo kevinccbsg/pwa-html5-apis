@@ -8,8 +8,6 @@ voiceButton.addEventListener('click', (e) => {
   startDictation(microphoneIcon);
 });
 
-window.navigator.vibrate(200);
-
 function startDictation(icon) {
   if (window.hasOwnProperty('webkitSpeechRecognition')) {
 
