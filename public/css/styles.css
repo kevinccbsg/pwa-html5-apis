@@ -1,15 +1,31 @@
 
-body {
-  margin: 0;
-  padding: 0;
-}
-
 header {
   background-color: #FDFDFD;
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(86, 86, 86);
+  color: rgba(255,255,255,.9);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+nav .buttons button {
+  min-width: 115px;
+}
+
+canvas {
+  width: 100%;
+}
+
+video {
+  width: 100%;
 }
 
 .main-container .screenshot-detection,
@@ -44,4 +60,12 @@ header {
   background-image: url(/images/glasses.png);
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.screenshot-detection {
+  text-align: center;
+  margin: 10px 0;
+}
+.camera-button {
+  margin: 10px 0;
 }

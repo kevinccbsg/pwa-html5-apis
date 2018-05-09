@@ -22,16 +22,13 @@ let tracker;
 let trackingTask;
 
 videoButton.addEventListener('click', (e) => {
+  e.target.className = 'ui teal button';
+  screenShootButton.className = 'ui button';
   mainContainer.className = 'main-container video';
 
   const faceSquare = document.getElementById('videoFaceSquare');
   faceSquare.style.visibility = 'hidden';
-  const canvas = window.canvas = document.querySelector('#screenshot-canvas');
-
-  canvas.width = 480;
-  canvas.height = 360;
-
-  if (tracker) {
+  if (trackingTask) {
     trackingTask.stop();
   }
 
@@ -61,16 +58,17 @@ videoButton.addEventListener('click', (e) => {
 
 
 screenShootButton.addEventListener('click', (e) => {
+  e.target.className = 'ui teal button';
+  videoButton.className = 'ui button';
   mainContainer.className = 'main-container screenshot';
   const button = document.getElementById('my-button');
   const faceSquare = document.getElementById('faceSquare');
 
   const canvas = window.canvas = document.querySelector('#screenshot-canvas');
 
-  canvas.width = 480;
-  canvas.height = 360;
+  canvas.height = 0;
 
-  if (tracker) {
+  if (trackingTask) {
     trackingTask.stop();
   }
 

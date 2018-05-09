@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>HTML APIS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.css">
   <link rel="stylesheet" href="/css/styles.css">
   <script src="/js/vendor/tracking.min.js"></script>
   <script src="/js/vendor/face.js"></script>
@@ -16,8 +17,11 @@
     <h1>HTML APIS Testing</h1>
   </header>
   <nav>
-    <button id="videoButton">Video Detection</button>
-    <button id="screenShootButton">Screenshot Detection</button>
+    <div class="ui buttons">
+      <button id="videoButton" class="ui button">Video</button>
+      <div class="or"></div>
+      <button id="screenShootButton" class="ui button">Screenshot</button>
+    </div>
   </nav>
   <main class="main-container">
     <div class="video-container">
@@ -25,7 +29,11 @@
       <div id="videoFaceSquare" class="video-detection face-container"></div>
     </div>
     <div class="screenshot-detection">
-      <button id="my-button">Capture</button>
+      <div class="camera-button">
+        <button id="my-button" class="circular big teal ui icon button">
+          <i class="icon camera"></i>
+        </button>
+      </div>
       <div class="video-container">
         <canvas id="screenshot-canvas"></canvas>
         <div id="faceSquare" class="face-container"></div>
