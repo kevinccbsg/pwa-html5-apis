@@ -69,3 +69,10 @@ video {
 .camera-button {
   margin: 10px 0;
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main-container {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
