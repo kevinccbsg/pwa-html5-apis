@@ -61,7 +61,11 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "80d7f31f4078b5daff22e47030e05920"
+    "revision": "7f38779c9ca801475287688e93ba4dce"
+  },
+  {
+    "url": "index.js",
+    "revision": "5ef9dd813e718f87f645f605ae0bf933"
   },
   {
     "url": "js/app.js",
@@ -98,3 +102,5 @@ self.__precacheManifest = [
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+
+workbox.routing.registerRoute(/\.(?:png|jpg|jpeg|svg)$/, workbox.strategies.cacheFirst({ plugins: [new workbox.expiration.Plugin({"maxEntries":10})] }), 'GET');
