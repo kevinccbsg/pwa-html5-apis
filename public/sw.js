@@ -104,3 +104,20 @@ workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.routing.registerRoute(/\.(?:png|jpg|jpeg|svg)$/, workbox.strategies.cacheFirst({ plugins: [new workbox.expiration.Plugin({"maxEntries":10})] }), 'GET');
+
+workbox.routing.registerRoute(
+  /https:\/\/cdn.jsdelivr.net\/npm\/semantic-ui@2.3.1\/dist\/(.*)/,
+  workbox.strategies.networkFirst(),
+);
+
+workbox.routing.registerRoute(
+  new RegExp('https://fonts.(?:googleapis|gstatic).com/(.*)'),
+  workbox.strategies.cacheFirst({
+    cacheName: 'googleapis',
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 30,
+      }),
+    ],
+  }),
+);
