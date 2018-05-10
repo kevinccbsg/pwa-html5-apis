@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML APIS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="manifest" href="manifest.json">
+  <script src="js/vendor/tracking.min.js"></script>
+  <script src="js/vendor/face.js"></script>
+  <script src="js/vendor/eye.js"></script>
+  <script src="js/vendor/mouth.js"></script>
+</head>
+<body>
+  <header>
+    <h1>HTML APIS Testing</h1>
+  </header>
+  <main class="main-container">
+    <div class="title-container">
+      <h2>Camera API</h2>
+      <p>Example of getUserMedia API and tracking.js</p>
+    </div>
+    <nav>
+      <div class="ui buttons">
+        <button id="videoButton" class="ui button">Video</button>
+        <div class="or"></div>
+        <button id="screenShootButton" class="ui button">Screenshot</button>
+      </div>
+    </nav>
+    <div class="video-container">
+      <video id="stream-video"></video>
+      <div id="videoFaceSquare" class="video-detection face-container"></div>
+    </div>
+    <div class="screenshot-detection">
+      <div class="camera-button">
+        <button id="my-button" class="circular big teal ui icon button">
+          <i class="icon camera"></i>
+        </button>
+      </div>
+      <div class="video-container">
+        <canvas id="screenshot-canvas"></canvas>
+        <div id="faceSquare" class="face-container"></div>
+      </div>
+    </div>
+    <div class="title-container">
+      <h2>Voice recognition</h2>
+      <p>Example of voice recognition API</p>
+    </div>
+    <div>
+      <div class="camera-button">
+        <button id="voice-button" class="circular big teal ui icon button">
+          <i id="microphone-icon" class="icon microphone slash"></i>
+        </button>
+      </div>
+    </div>
+    <div class="voice-paragraph">
+      <p id="voiceText">This text is going to change after you click in the Microphone Icon...</p>
+    </div>
+    <div class="title-container">
+      <h2>Vibrate API</h2>
+      <p>Example of vibrate API</p>
+    </div>
+    <div>
+      <div class="camera-button">
+        <button id="vibrate-button" class="circular big teal ui icon button">
+          <i id="microphone-icon" class="icon bell"></i>
+        </button>
+      </div>
+    </div>
+  </main>
+  <script src="index.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/voice-recognition.js"></script>
+  <script src="js/vibrate.js"></script>
+</body>
+</html>
