@@ -65,7 +65,7 @@ video {
   position: absolute;
   visibility: hidden;
   border: 1px solid blue;
-  background-image: url(/images/glasses.png);
+  background-image: url(./../images/glasses.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -88,7 +88,7 @@ video {
   margin-bottom: 5px;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) {
   .main-container {
     width: 60%;
     margin: 0 auto;
